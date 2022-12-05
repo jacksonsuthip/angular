@@ -1,34 +1,57 @@
-<form>
-    <div class="form-row">
-        <div class="col-2">
-            <span>Name</span>
-        </div>
-        <div class="col-4">
-            <input type="text" class="form-control" placeholder="Name">
-        </div>
+<div class='row justify-content-center ' style="width: inherit;">
+    <div class=' formDiv'>
+        <fieldset class='field'>
+            <p></p>
+            <div class='row'>
+                <div class='col-md-1'></div>
+                <div class='col-md-3'><b>Name</b></div>
+                <div class='col-md-4'><input type="text" class='form-control' id="name"
+                        (change)="onChangeName($event)" /></div>
+            </div>
+            <p></p>
+            <div class='row'>
+                <div class='col-md-1'></div>
+                <div class='col-md-3'><b>Address</b></div>
+                <div class='col-md-5'><textarea (change)="onChangeAddress($event)" id="address">
+            </textarea></div>
+            </div>
+            <p></p>
+            <div class='row'>
+                <div class='col-md-1'></div>
+                <div class='col-md-3'><b>City</b></div>
+                <div class='col-md-5'>
+                    <select class='form-control' (click)="onClickCity($event)" id="city">
+                        <option value="">Select City</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Kolkata">Kolkata</option>
+                    </select>
+                </div>
+            </div>
+            <p></p>
+            <div class='row'>
+                <div class='col-md-1'></div>
+                <div class='col-md-3'><b>Gender</b></div>
+                <div class='col-md-6 radioDiv'>
+                    <input class="form-check-input" type="radio" name="genType" id='genM'
+                        (click)="onClickGen($event)" />
+                    <label class=" form-check-label radioDiv" htmlFor="genM">Male</label>
+                    <input class="form-check-input" type="radio" name="genType" id='genF'
+                        (click)="onClickGen($event)" />
+                    <label class=" form-check-label radioDiv" htmlFor="genF">Female</label>
+                    <input class="form-check-input" type="radio" name="genType" id='genO'
+                        (click)="onClickGen($event)" />
+                    <label class=" form-check-label radioDiv" htmlFor="genO">Other</label>
+                </div>
+            </div>
+            <p></p>
+            <div class='row'>
+                <div class='col-md-4'></div>
+                <div class='col-md-2'>
+                    <button type="button" class="btn btn-primary">Add</button>
+                    <button type="button">Update</button>
+                </div>
+            </div>
+        </fieldset>
     </div>
-    <div class="form-row">
-        <div class="col-2">
-            <span>Age</span>
-        </div>
-        <div class="col-4">
-            <input type="text" class="form-control" placeholder="Age">
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="col-2">
-            <span>Sex</span>
-        </div>
-        <div class="col-4">
-            <input type="text" class="form-control" placeholder="Sex">
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="col-2">
-            <span>City</span>
-        </div>
-        <div class="col-4">
-            <input type="text" class="form-control" placeholder="City">
-        </div>
-    </div>
-</form>
+</div>
