@@ -1,57 +1,120 @@
-<div class='row justify-content-center ' style="width: inherit;">
-    <div class=' formDiv'>
-        <fieldset class='field'>
-            <p></p>
-            <div class='row'>
-                <div class='col-md-1'></div>
-                <div class='col-md-3'><b>Name</b></div>
-                <div class='col-md-4'><input type="text" class='form-control' id="name"
-                        (change)="onChangeName($event)" /></div>
-            </div>
-            <p></p>
-            <div class='row'>
-                <div class='col-md-1'></div>
-                <div class='col-md-3'><b>Address</b></div>
-                <div class='col-md-5'><textarea (change)="onChangeAddress($event)" id="address">
-            </textarea></div>
-            </div>
-            <p></p>
-            <div class='row'>
-                <div class='col-md-1'></div>
-                <div class='col-md-3'><b>City</b></div>
-                <div class='col-md-5'>
-                    <select class='form-control' (click)="onClickCity($event)" id="city">
-                        <option value="">Select City</option>
-                        <option value="Chennai">Chennai</option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Kolkata">Kolkata</option>
-                    </select>
-                </div>
-            </div>
-            <p></p>
-            <div class='row'>
-                <div class='col-md-1'></div>
-                <div class='col-md-3'><b>Gender</b></div>
-                <div class='col-md-6 radioDiv'>
-                    <input class="form-check-input" type="radio" name="genType" id='genM'
-                        (click)="onClickGen($event)" />
-                    <label class=" form-check-label radioDiv" htmlFor="genM">Male</label>
-                    <input class="form-check-input" type="radio" name="genType" id='genF'
-                        (click)="onClickGen($event)" />
-                    <label class=" form-check-label radioDiv" htmlFor="genF">Female</label>
-                    <input class="form-check-input" type="radio" name="genType" id='genO'
-                        (click)="onClickGen($event)" />
-                    <label class=" form-check-label radioDiv" htmlFor="genO">Other</label>
-                </div>
-            </div>
-            <p></p>
-            <div class='row'>
-                <div class='col-md-4'></div>
-                <div class='col-md-2'>
-                    <button type="button" class="btn btn-primary">Add</button>
-                    <button type="button">Update</button>
-                </div>
-            </div>
-        </fieldset>
-    </div>
+<div class="row justify-content-center" style="width: inherit">
+  <div class="formDiv">
+    <fieldset class="field">
+      <p></p>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3"><b>Name</b></div>
+        <div class="col-md-4">
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            (change)="onChangeField($event)"
+          />
+        </div>
+      </div>
+      <p></p>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3"><b>Good</b></div>
+        <div class="col-md-5">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="Look"
+              name="good"
+              (change)="onChangeField($event)"
+            />
+            <label class="form-check-label" for="Look">Look</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="Performance"
+              name="good"
+              (change)="onChangeField($event)"
+            />
+            <label class="form-check-label" for="Performance"
+              >Performance</label
+            >
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="Cost"
+              name="good"
+              (change)="onChangeField($event)"
+            />
+            <label class="form-check-label" for="Cost">Cost</label>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3"><b>Brand</b></div>
+        <div class="col-md-5">
+          <select
+            class="form-control"
+            (click)="onChangeField($event)"
+            id="Brand"
+            name="Brand"
+          >
+            <option value="">Select Brand</option>
+            <option value="HP">HP</option>
+            <option value="Lenovo">Lenovo</option>
+            <option value="Dell">Dell</option>
+          </select>
+        </div>
+      </div>
+      <p></p>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3"><b>Color</b></div>
+        <div class="col-md-6 radioDiv">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="color"
+            id="White"
+            (click)="onChangeField($event)"
+          />
+          <label class="form-check-label radioDiv" htmlFor="White">White</label>
+          <input
+            class="form-check-input"
+            type="radio"
+            name="color"
+            id="Grey"
+            (click)="onChangeField($event)"
+          />
+          <label class="form-check-label radioDiv" htmlFor="Grey">Grey</label>
+          <input
+            class="form-check-input"
+            type="radio"
+            name="color"
+            id="Black"
+            (click)="onChangeField($event)"
+          />
+          <label class="form-check-label radioDiv" htmlFor="Black">Black</label>
+        </div>
+      </div>
+      <p></p>
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-2">
+          <button type="button" class="btn btn-primary" (click)="onAdd()">
+            Add
+          </button>
+          <button type="button">Update</button>
+        </div>
+      </div>
+    </fieldset>
+  </div>
 </div>
+
+<li *ngFor="let item of allDevices; index as i">{{ item.name }}</li>
