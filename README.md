@@ -1,3 +1,12 @@
+# Steps
+
+-> Open CMD
+-> Install angular-cli (npm install -g @angular-cli)
+-> create a folder & open cmd in that folder
+-> create angular app (ng ===my-anguular-app===)
+
+---
+
 # MyAngularApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
