@@ -1,1 +1,17 @@
 <h3>Hii...</h3>
+<input type="text" [(ngModel)]="name" />
+<div>{{ name }}</div>
+<button [disabled]="btnDisable" (click)="onClickButton()">Button</button>
+<!-- if else using Directive -->
+<p *ngIf="!status; else bii">Hii</p>
+<ng-template #bii>
+  <p>Bye</p>
+</ng-template>
+<!---->
+<p
+  [ngStyle]="{ color: getColor() }"
+  [ngClass]="{ styleClass: status === true }"
+>
+  {{ available }}
+</p>
+<hr />
