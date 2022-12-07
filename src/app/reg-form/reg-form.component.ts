@@ -3,29 +3,35 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-reg-form',
   templateUrl: './reg-form.component.html',
-  styleUrls: ['./reg-form.component.css']
+  styleUrls: ['./reg-form.component.css'],
 })
 export class RegFormComponent {
-  uName = ''
-  city = ''
-  address = ''
-  gen = ''
-  onChangeName(event) {
-    this.uName = event.target.value
-  }
-  onClickCity(event) {
-    this.city = event.target.value
-  }
-  onChangeAddress(event) {
-    this.address = event.target.value
-  }
-  onClickGen(event) {
-    if (event.target.id === 'genM') {
-      this.gen = 'male'
-    } else if (event.target.id === 'genF') {
-      this.gen = 'female'
+  devices = {
+    name: '',
+    good: {},
+    brand: '',
+    color: '',
+  };
+  allDevices = [];
+
+  onChangeField(e) {
+    if (e.target.name === 'color') {
+      this.devices = { ...this.devices, [e.target.name]: e.target.id };
+    } else if (e.target.name === 'good') {
+      this.devices = {
+        ...this.devices,
+        good: {
+          ...this.devices.good,
+          [e.target.id]: e.target.checked,
+        },
+      };
     } else {
-      this.gen = 'other'
+      this.devices = { ...this.devices, [e.target.name]: e.target.value };
     }
+  }
+
+  onAdd() {
+    this.allDevices.push(this.devices);
+    console.log(this.allDevices);
   }
 }
