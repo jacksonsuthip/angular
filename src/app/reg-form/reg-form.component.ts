@@ -47,4 +47,9 @@ export class RegFormComponent {
   removeItem(index) {
     this.allDevices = this.allDevices.filter((_row, i) => i !== index);
   }
+
+  editItem(index) {
+    let temp = this.allDevices.filter((_row, i) => i === index);
+    this.devices = temp[0];
+  }
 }
