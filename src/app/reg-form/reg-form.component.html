@@ -12,6 +12,7 @@
             id="name"
             name="name"
             #name
+            [(ngModel)]="devices.name"
             autocomplete="false"
             (change)="onChangeField($event)"
           />
@@ -89,7 +90,7 @@
               type="radio"
               name="color"
               id="Grey"
-              [checked]="color"
+              [checked]="devices.color === 'Grey' ? true : false"
               (click)="onChangeField($event)"
             />
             <label class="form-check-label" for="Grey"> Grey </label>
@@ -100,6 +101,7 @@
               type="radio"
               name="color"
               id="White"
+              [checked]="devices.color === 'White' ? true : false"
               (click)="onChangeField($event)"
             />
             <label class="form-check-label" for="White"> White </label>
@@ -110,6 +112,7 @@
               type="radio"
               name="color"
               id="Black"
+              [checked]="devices.color === 'Black' ? true : false"
               (click)="onChangeField($event)"
             />
             <label class="form-check-label" for="Black"> Black </label>
@@ -125,11 +128,20 @@
             type="button"
             class="btn btn-primary"
             (click)="onAdd(); name.value = ''"
+            [ngClass]="{ setButton: buttonStatus === false }"
           >
             <i class="bi bi-plus-circle"></i>
             Add
           </button>
-          <!-- <button type="button" class="btn btn-primary">Update</button> -->
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="onEdit()"
+            [ngClass]="{ setButton: buttonStatus === true }"
+          >
+            <i class="bi bi-arrow-up-square"></i>
+            Update
+          </button>
         </div>
       </div>
       <p></p>
@@ -161,7 +173,7 @@
                 type="button"
                 class="btn btn-outline-primary"
                 style="margin-right: 30px"
-                (click)="editItem(i)"
+                (click)="getEditItem(i)"
               >
                 <i class="bi bi-pencil-square"></i> Edit
               </button>
