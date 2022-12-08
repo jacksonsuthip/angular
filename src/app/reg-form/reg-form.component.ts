@@ -6,16 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./reg-form.component.css'],
 })
 export class RegFormComponent {
+  color = true;
   devices = {
     name: '',
-    good: {},
+    good: { Look: false, Cost: false, Performance: false },
     brand: '',
-    color: '',
+    color: 'Grey',
   };
   allDevices = [];
 
   onChangeField(e) {
     if (e.target.name === 'color') {
+      this.color = false;
       this.devices = { ...this.devices, [e.target.name]: e.target.id };
     } else if (e.target.name === 'good') {
       this.devices = {
@@ -32,6 +34,17 @@ export class RegFormComponent {
 
   onAdd() {
     this.allDevices.push(this.devices);
+    this.devices = {
+      name: '',
+      good: { Look: false, Cost: false, Performance: false },
+      brand: '',
+      color: 'Grey',
+    };
+    this.color = true;
     console.log(this.allDevices);
+  }
+
+  removeItem(index) {
+    this.allDevices = this.allDevices.filter((_row, i) => i !== index);
   }
 }
