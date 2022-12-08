@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { devicesType } from './reg.interface';
 
 @Component({
   selector: 'app-reg-form',
@@ -10,21 +11,21 @@ export class RegFormComponent {
    * Setting initial value for all devices
    * buttonStatus for (add or update) class update
    */
-  devices = {
+  devices: devicesType = {
     name: '',
     good: { Look: false, Cost: false, Performance: false },
     brand: '',
     color: '',
   };
-  allDevices = [];
-  buttonStatus = true;
-  editIndex = 0;
+  allDevices: devicesType[] = [];
+  buttonStatus: boolean = true;
+  editIndex: number = 0;
 
   /**
    * @param e getting the event
    * setting key value for device
    */
-  onChangeField(e) {
+  onChangeField(e: any) {
     if (e.target.name === 'color') {
       this.devices = { ...this.devices, [e.target.name]: e.target.id };
     } else if (e.target.name === 'good') {
@@ -50,13 +51,13 @@ export class RegFormComponent {
   /**
    * @param index delete button function
    */
-  removeItem(index) {
+  removeItem(index: number) {
     this.allDevices = this.allDevices.filter((_row, i) => i !== index);
   }
   /**
    * @param index edit button function
    */
-  getEditItem(index) {
+  getEditItem(index: number) {
     let temp = this.allDevices.filter((_row, i) => i === index);
     this.devices = temp[0];
     this.buttonStatus = false;
