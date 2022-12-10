@@ -1,0 +1,11 @@
+<div class="col"></div>
+<div class="col">
+  <div
+    *ngIf="selectedValue"
+    [ngStyle]="{ color: getColor() }"
+    class="card encapulationStyle"
+  >
+    <div class="card-body">{{ selectedValue }}</div>
+  </div>
+</div>
+<div class="col"></div>

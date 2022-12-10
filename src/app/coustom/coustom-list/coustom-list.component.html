@@ -1,0 +1,9 @@
+<ul class="list-group">
+  <li
+    *ngFor="let item of itemList"
+    class="list-group-item"
+    (click)="onNameClick(item)"
+  >
+    {{ item }}
+  </li>
+</ul>
