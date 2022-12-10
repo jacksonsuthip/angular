@@ -1,0 +1,13 @@
+<form>
+  <div class="mb-3">
+    <label for="device" class="form-label">Device Name</label>
+    <input type="text" class="form-control" id="device" #device />
+  </div>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    (click)="onAddDevice(device); device.value = ''"
+  >
+    Submit
+  </button>
+</form>
