@@ -10,6 +10,9 @@ import { CoustomAddComponent } from './coustom/coustom-add/coustom-add.component
 import { CoustomListComponent } from './coustom/coustom-list/coustom-list.component';
 import { EncapulationComponent } from './coustom/encapulation/encapulation.component';
 
+// Directive import
+import { BasicDirective } from './directiveFolder/basic-directive.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +22,7 @@ import { EncapulationComponent } from './coustom/encapulation/encapulation.compo
     CoustomAddComponent,
     CoustomListComponent,
     EncapulationComponent,
+    BasicDirective,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

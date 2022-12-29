@@ -2,10 +2,10 @@
 <div class="col">
   <div
     *ngIf="selectedValue"
-    [ngStyle]="{ color: getColor() }"
+    [ngStyle]="{ backgroundColor: getColor() }"
     class="card encapulationStyle"
   >
-    <div class="card-body">{{ selectedValue }}</div>
+    <h5 class="card-title">{{ selectedValue }}</h5>
   </div>
 </div>
 <div class="col"></div>
