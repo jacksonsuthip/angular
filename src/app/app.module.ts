@@ -12,6 +12,8 @@ import { EncapulationComponent } from './coustom/encapulation/encapulation.compo
 
 // Directive import
 import { BasicDirective } from './directiveFolder/basic-directive.directive';
+// Module import
+import { ServiceStudyModule } from './service-study/service-study.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,11 @@ import { BasicDirective } from './directiveFolder/basic-directive.directive';
     EncapulationComponent,
     BasicDirective,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ServiceStudyModule, // add the feature module here
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
