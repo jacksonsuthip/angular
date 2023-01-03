@@ -1,0 +1,19 @@
+<div class="mb-3">
+  <div class="row mt-5 justify-content-md-center">
+    <div class="col-1 align-self-center">
+      <label for="region" class="form-label">Location</label>
+    </div>
+    <div class="col-3">
+      <input type="text" class="form-control" id="region" #region />
+    </div>
+    <div class="col-3">
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="onCheckWeather(region); region.value = ''"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
