@@ -1,4 +1,4 @@
-<app-server></app-server>
+<!-- <app-server></app-server> -->
 <!-- <hr /> -->
 <!-- Form add edit delete in same component -->
 <!-- <div style="margin: 25px 0px 0px 0px">
@@ -11,8 +11,24 @@
 <!-- -->
 
 <!-- split content in different component -->
-<coustom></coustom>
+<!-- <coustom></coustom> -->
 
 <!-- service-study with seperate module -->
-<hr />
-<weather></weather>
+<!-- <hr /> -->
+<!-- <weather></weather> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <span style="color: white; font-size: 1.6rem">Welcome!</span>
+    <div class="navbar-collapse ul-div" id="navbarResponsive">
+      <ul class="navbar-nav">
+        <li *ngFor="let item of link" class="nav-item mx-0 mx-lg-1" key="{i}">
+          <a routerLink="/{{ item.address }}" class="li-a">
+            {{ item.title }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
