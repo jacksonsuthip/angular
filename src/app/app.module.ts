@@ -14,6 +14,7 @@ import { EncapulationComponent } from './coustom/encapulation/encapulation.compo
 import { BasicDirective } from './directiveFolder/basic-directive.directive';
 // Module import
 import { ServiceStudyModule } from './service-study/service-study.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,10 @@ import { ServiceStudyModule } from './service-study/service-study.module';
   imports: [
     BrowserModule,
     FormsModule,
-    ServiceStudyModule, // add the feature module here
+    // add the feature module here
+    ServiceStudyModule,
+    // routing
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -5,4 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {}
+export class AppComponent {
+  link: { address: string; title: string }[] = [
+    { address: 'demo', title: 'Demo' },
+    { address: 'reg-form', title: 'Reg Form' },
+    { address: 'coustom', title: 'Coustom component' },
+    { address: 'weather', title: 'Weather app' },
+  ];
+}

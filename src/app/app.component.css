@@ -1,4 +1,14 @@
 .fieldset {
-    border: 2px solid blue;
-    max-width: 100%;
+border: 2px solid blue;
+max-width: 100%;
+}
+
+.li-a {
+text-decoration: none;
+color: #FFF;
+margin-right: 20px;
+}
+
+.ul-div { 
+justify-content: right;
 }
