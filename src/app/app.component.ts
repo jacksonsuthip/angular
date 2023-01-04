@@ -11,5 +11,6 @@ export class AppComponent {
     { address: 'reg-form', title: 'Reg Form' },
     { address: 'coustom', title: 'Coustom component' },
     { address: 'weather', title: 'Weather app' },
+    { address: 'form-reactive', title: 'Reactive Form' },
   ];
 }
