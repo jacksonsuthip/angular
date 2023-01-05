@@ -18,11 +18,15 @@ export class WeatherDetailsComponent implements OnInit, DoCheck {
   chartOptions: any = {
     series: [],
     chart: {
-      height: 250,
+      height: 340,
       type: 'line',
     },
     title: {
       text: 'Forecast',
+    },
+    stroke: {
+      curve: 'smooth',
+      width: 4,
     },
   };
 

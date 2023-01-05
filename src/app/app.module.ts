@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
@@ -15,6 +15,7 @@ import { BasicDirective } from './directiveFolder/basic-directive.directive';
 // Module import
 import { ServiceStudyModule } from './service-study/service-study.module';
 import { AppRoutingModule } from './app-routing.module';
+import { FormReactiveComponent } from './form-reactive/form-reactive.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AppRoutingModule } from './app-routing.module';
     CoustomListComponent,
     EncapulationComponent,
     BasicDirective,
+    FormReactiveComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,8 @@ import { AppRoutingModule } from './app-routing.module';
     ServiceStudyModule,
     // routing
     AppRoutingModule,
+    // reactive forms
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
