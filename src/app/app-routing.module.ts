@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/reg-form', pathMatch: 'full' },
   { path: 'demo', component: ServerComponent },
   { path: 'reg-form', component: RegFormComponent },
-  { path: 'coustom', component: coustomComponent },
+  { path: 'custom', component: coustomComponent },
   { path: 'weather', component: WeatherComponent },
   { path: 'form-reactive', component: FormReactiveComponent },
   // { path: '**', component: PageNotFoundComponent },
