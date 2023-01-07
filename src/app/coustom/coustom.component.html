@@ -1,10 +1,8 @@
 <div class="container-md">
   <div class="row mt-5">
     <div class="col">
-      <!-- addDevice(from this component) & onAddDeviceCoustom(from child component) -->
-      <app-coustom-add
-        (onAddDeviceCoustom)="addDevice($event)"
-      ></app-coustom-add>
+      <!-- addColor(from this component) & onAddColorCoustom(from child component) -->
+      <app-coustom-add (onAddColorCoustom)="addColor($event)"></app-coustom-add>
     </div>
     <div class="col">
       <!-- CoustomItemList(from this component) & itemList(from child component) -->

@@ -1,6 +1,11 @@
-<div class="row">
-  <div class="col">
-    <div class="card text-center mb-3" style="max-width: 18rem">
+<div class="row justify-content-md-center">
+  <div class="col mt-5" *ngIf="loading" style="text-align: center">
+    <div class="spinner-grow text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <div class="col" *ngIf="!loading">
+    <div class="card text-center mb-3 ml-5" style="max-width: 18rem">
       <div class="card-header">
         <div class="row align-items-center">
           <div class="col">
@@ -19,7 +24,8 @@
           </div>
         </h5>
         <p class="card-text">
-          Wind Speed {{ currentWeather.wind }} {{ currentWeather.description }}
+          Wind Speed {{ currentWeather.wind }}
+          {{ currentWeather.description }}
         </p>
         <p class="card-text">
           {{ currentWeather.description }}
@@ -27,7 +33,7 @@
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="col" *ngIf="!loading">
     <apx-chart
       [series]="chartOptions.series || []"
       [chart]="chartOptions.chart"

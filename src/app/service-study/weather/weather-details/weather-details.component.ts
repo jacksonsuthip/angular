@@ -29,6 +29,8 @@ export class WeatherDetailsComponent implements OnInit, DoCheck {
       width: 4,
     },
   };
+  //
+  loading = false;
 
   // weatherService from service
   constructor(
@@ -56,6 +58,7 @@ export class WeatherDetailsComponent implements OnInit, DoCheck {
   getForcast() {
     // cross communication between components
     this.weatherService.crossCommunication.subscribe((regionName) => {
+      this.loading = true;
       // promise used for api call (resolve, reject) are arguments
       let promise: any = new Promise<void>((resolve, reject) => {
         this.http
@@ -82,9 +85,11 @@ export class WeatherDetailsComponent implements OnInit, DoCheck {
                   data: series,
                 },
               ];
+              this.loading = false;
               resolve();
             },
             (msg) => {
+              this.loading = false;
               reject(msg);
             }
           );

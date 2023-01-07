@@ -1,12 +1,18 @@
 <form>
   <div class="mb-3">
-    <label for="device" class="form-label">Device Name</label>
-    <input type="text" class="form-control" id="device" #device />
+    <label for="device" class="form-label">Color</label>
+    <input
+      type="text"
+      class="form-control"
+      id="device"
+      #color
+      placeholder="Color Name (or) Color Code"
+    />
   </div>
   <button
     type="submit"
     class="btn btn-primary"
-    (click)="onAddDevice(device); device.value = ''"
+    (click)="onAddColor(color); color.value = ''"
   >
     Submit
   </button>
