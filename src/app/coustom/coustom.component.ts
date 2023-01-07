@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 export class coustomComponent {
   CoustomItemList: string[] = [];
 
-  addDevice(e: string) {
+  addColor(e: string) {
     this.CoustomItemList.push(e);
   }
 
